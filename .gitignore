@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+*.log
+.claude/settings.local.json
+.claude/projects/
+.claude/worktrees/
+*_测试输出/
+
+# macOS 资源派生文件（AppleDouble）
+._*
+.DS_Store
+
+# 离线依赖包（win_amd64 .whl，可用 pip download 重新生成）
+依赖/
+
+# 反馈/样例数据包（大体积二进制数据，不入库）
+*.zip
+*_反馈文件*

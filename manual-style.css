@@ -1,0 +1,230 @@
+/* 资金数据清洗工具 - 使用手册样式（V1.9 科技专业风） */
+
+@page {
+  size: A4;
+  margin: 2.1cm 1.8cm 2.3cm 1.8cm;
+
+  @top-left {
+    content: "V1.9";
+    font-family: "Menlo", "Consolas", monospace;
+    font-size: 8pt;
+    font-weight: bold;
+    color: #1E63C8;
+  }
+
+  @top-right {
+    content: "资金数据清洗工具 · 使用手册";
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 8pt;
+    color: #9FB3CC;
+    letter-spacing: 1pt;
+  }
+
+  @bottom-center {
+    content: "第 " counter(page) " 页 / 共 " counter(pages) " 页";
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 8pt;
+    color: #8AA0BC;
+  }
+}
+
+@page :first {
+  @top-left { content: none; }
+  @top-right { content: none; }
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Heiti SC", sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.78;
+  color: #26364D;
+  margin: 0;
+}
+
+/* ============ 封面标题（科技渐变 hero） ============ */
+h1 {
+  background-image: linear-gradient(135deg, #071A33 0%, #0F3A77 55%, #1E63C8 100%);
+  color: #FFFFFF;
+  font-size: 21pt;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 3pt;
+  padding: 30pt 18pt 20pt;
+  border: 1pt solid rgba(255, 255, 255, 0.22);
+  border-radius: 12pt;
+  margin: 0 0 12pt;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 72pt;
+  height: 3pt;
+  margin: 12pt auto 0;
+  background: #22D3EE;
+  border-radius: 2pt;
+}
+
+/* 封面元信息（版本 / 运行环境） */
+h1 + p {
+  text-align: center;
+  font-size: 10pt;
+  color: #41587B;
+  letter-spacing: 0.5pt;
+  margin: 10pt 0 4pt;
+}
+
+h1 + p strong {
+  color: #0F3A77;
+}
+
+h1 + p .ver {
+  display: inline-block;
+  padding: 1.5pt 9pt;
+  border-radius: 9pt;
+  background: linear-gradient(135deg, #1E63C8, #22D3EE);
+  color: #FFFFFF;
+  font-family: "Menlo", "Consolas", monospace;
+  font-size: 9.5pt;
+  font-weight: bold;
+  letter-spacing: 0.5pt;
+}
+
+/* 封面版权行 */
+h1 + p + p {
+  text-align: center;
+  font-size: 9.5pt;
+  color: #7B8CA6;
+  margin: 2pt 0 14pt;
+}
+
+/* ============ 分隔线 ============ */
+hr {
+  border: none;
+  height: 2pt;
+  background: linear-gradient(90deg, transparent, #BBD3EE, transparent);
+  margin: 16pt 0 4pt;
+}
+
+/* ============ 章节标题 ============ */
+h2 {
+  font-size: 14.5pt;
+  font-weight: bold;
+  color: #0F3A77;
+  background: linear-gradient(90deg, #E8F1FC 0%, rgba(232, 241, 252, 0) 88%);
+  border-left: 4pt solid #1E63C8;
+  border-radius: 0 6pt 6pt 0;
+  padding: 7pt 12pt;
+  margin: 24pt 0 10pt;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #153E75;
+  border-left: 3pt solid #22D3EE;
+  padding-left: 8pt;
+  margin: 16pt 0 6pt;
+  page-break-after: avoid;
+}
+
+/* ============ 段落与强调 ============ */
+p {
+  margin: 6pt 0;
+}
+
+strong {
+  color: #0F3A77;
+}
+
+/* ============ 表格 ============ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8pt 0 14pt;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+thead th {
+  background: #0F3A77;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: left;
+  padding: 7pt 10pt;
+  border: 1pt solid #0F3A77;
+}
+
+tbody td {
+  padding: 6pt 10pt;
+  border: 1pt solid #DCE6F2;
+  color: #2B3B52;
+}
+
+tbody tr:nth-child(even) td {
+  background: #F3F7FC;
+}
+
+/* 版本历史表：高亮当前版本行 */
+.version-history tbody tr:last-child td {
+  background: #E3F3FD;
+  color: #0F3A77;
+  font-weight: bold;
+}
+
+/* ============ 提示框 ============ */
+blockquote {
+  background: #F0F6FF;
+  border-left: 4pt solid #1E63C8;
+  border-radius: 0 8pt 8pt 0;
+  padding: 10pt 14pt;
+  margin: 12pt 0;
+  color: #274B7A;
+  page-break-inside: avoid;
+}
+
+blockquote p {
+  margin: 2pt 0;
+}
+
+/* ============ 代码块 ============ */
+pre {
+  background: #0B1B34;
+  color: #D7E3F4;
+  border: 1pt solid #16345F;
+  border-radius: 8pt;
+  padding: 11pt 14pt;
+  font-family: "Menlo", "Consolas", "Courier New", monospace;
+  font-size: 8.5pt;
+  line-height: 1.6;
+  margin: 10pt 0;
+  page-break-inside: avoid;
+}
+
+code {
+  font-family: "Menlo", "Consolas", "Courier New", monospace;
+}
+
+:not(pre) > code {
+  background: #EAF1FB;
+  color: #0F3A77;
+  padding: 0.5pt 4pt;
+  border-radius: 3pt;
+  font-size: 9pt;
+}
+
+/* ============ 列表 ============ */
+ul {
+  margin: 6pt 0;
+  padding-left: 20pt;
+}
+
+li {
+  margin: 3pt 0;
+}
+
+li::marker {
+  color: #1E63C8;
+  font-weight: bold;
+}
